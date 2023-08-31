@@ -1,3 +1,16 @@
 p {
   font-family: Lato;
 }
+
+.container {
+  display: flex;
+  gap: 10px;
+
+  > button {
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    cursor: pointer;
+    height: 20px;
+  }
+}

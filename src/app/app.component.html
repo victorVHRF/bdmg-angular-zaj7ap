@@ -3,3 +3,76 @@
 <br />
 
 <div>Escreva seu código HTML abaixo:</div>
+
+<form [formGroup]="formGroup">
+  <div class="container">
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="CEP"
+        formControlName="cep"
+        appCepMask
+        mask="99999-999"
+        (blur)="fetchCepData()"
+      />
+    </mat-form-field>
+  </div>
+
+  <div class="container">
+    <mat-form-field>
+      <input matInput placeholder="Logradouro" formControlName="logradouro" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Complemento"
+        formControlName="complemento"
+        appComplementoMask
+        (blur)="onBlurComplemento()"
+      />
+    </mat-form-field>
+  </div>
+
+  <div class="container">
+    <mat-form-field>
+      <input matInput placeholder="Bairro" formControlName="bairro" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Localidade" formControlName="localidade" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="UF" formControlName="uf" />
+    </mat-form-field>
+  </div>
+
+  <div class="container">
+    <mat-form-field>
+      <input matInput placeholder="IBGE" formControlName="ibge" />
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="GIA" formControlName="gia" />
+    </mat-form-field>
+  </div>
+
+  <div class="container">
+    <mat-form-field>
+      <input matInput placeholder="DDD" formControlName="ddd" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="SIAFI" formControlName="siafi" />
+    </mat-form-field>
+
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      (click)="saveChanges()"
+    >
+      Salvar
+    </button>
+  </div>
+</form>
