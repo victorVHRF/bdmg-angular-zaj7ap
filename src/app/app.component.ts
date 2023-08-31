@@ -40,9 +40,14 @@ export class AppComponent implements OnInit {
 
   fetchCepData() {
     const cep = this.formGroup?.get('cep').value;
-    this.appService.getCepData(cep).subscribe((data) => {
-      this.formData = data;
-      this.formGroup.patchValue(data);
+    this.appService.getCepData(cep).subscribe({
+      next: (data: Formulario) => {
+        this.formData = data;
+        this.formGroup.patchValue(data);
+      },
+      error: (err) => {
+        console.log(err);
+      },
     });
   }
 
